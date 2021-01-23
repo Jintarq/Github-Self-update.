@@ -1,6 +1,7 @@
 const githubRepo = document.querySelector(".githubrepo");
 const repoName = document.querySelector(".repo-name");
 const repoArr = [];
+const repoUrl = [];
 
 function requestUserRepos(username) {
   // Create new XMLHttpRequest object
@@ -28,16 +29,22 @@ function requestUserRepos(username) {
       console.log("Repo:", data[i].name);
       repoArr.push(data[i].name);
       console.log(repoArr);
+      repoUrl.push(data[i].svn_url);
+      console.log(repoUrl);
     }
-    // For each element, create a div and stock him in a "p" element
+    // For each element, create a div and stock him in a "a" element
     repoArr.forEach((element) => {
       const newrepoDiv = document.createElement("div");
       githubRepo.appendChild(newrepoDiv);
       newrepoDiv.classList.add("newrepoDiv");
-      const newRepo = document.createElement("p");
+      const newRepo = document.createElement("a");
       newrepoDiv.appendChild(newRepo);
       newRepo.innerHTML = element;
       newRepo.classList.add("newRepo");
+      newRepo.target = "_blank";
+      repoUrl.forEach((e) => {
+        newRepo.href = e;
+      });
     });
   };
 

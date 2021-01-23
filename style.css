@@ -11,7 +11,7 @@
   object-fit: cover;
 }
 
-.text-nav,
+/* .text-nav,
 .link-nav,
 .logo-nav {
   display: flex;
@@ -37,7 +37,7 @@
 
 .navbar img {
   position: relative;
-}
+} */
 
 body {
   background: #191919;
@@ -50,10 +50,29 @@ body {
   flex-direction: column;
   margin-top: 50px;
   color: #7d7e75;
+  font-size: 30px;
 }
 .newrepoDiv {
   text-align: center;
 }
 .newRepo {
   color: ;
+}
+.title-project h1 {
+  color: #7d7e75;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.card {
+  width: 30%;
+  background: #191919;
+}
+
+.card-header {
+  color: #6c757d;
+}
+
+.card-body {
+  background: #7d7e75;
 }
