@@ -5,12 +5,6 @@
   font-family: "Fjalla One", sans-serif;
 }
 
-.bg {
-  width: 100%;
-  height: 700px;
-  object-fit: cover;
-}
-
 /* .text-nav,
 .link-nav,
 .logo-nav {
@@ -44,35 +38,48 @@ body {
   height: 100vh;
   width: 100%;
 }
-
+a {
+  text-decoration: none;
+  color: #85a6a5;
+}
+a:hover {
+  color: #687f85;
+}
 .githubrepo {
   display: flex;
   flex-direction: column;
   margin-top: 50px;
   color: #7d7e75;
-  font-size: 30px;
+  justify-content: center;
+  align-items: center;
 }
 .newrepoDiv {
   text-align: center;
+  margin-top: 35px;
+  background: white;
+  width: 25%;
 }
-.newRepo {
-  color: ;
-}
+
 .title-project h1 {
-  color: #7d7e75;
+  color: #4f5960;
   text-align: center;
   margin-top: 50px;
 }
 
-.card {
-  width: 30%;
-  background: #191919;
+.newrepoDiv a {
+  display: block;
+  margin-top: 5px;
+}
+.newRepo {
+  font-size: 35px;
 }
 
-.card-header {
-  color: #6c757d;
+.newDesc {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
 }
 
-.card-body {
-  background: #7d7e75;
+.newDesc:hover {
+  color: black;
 }
