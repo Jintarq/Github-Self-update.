@@ -1,2 +1,3 @@
-# Github-Self-update.
-A self-updater for new repos entered in Github.
+# Standalone-Github.
+
+An app use to show display my own Github.
