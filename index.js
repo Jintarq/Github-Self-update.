@@ -1,5 +1,6 @@
 const githubRepo = document.querySelector(".githubrepo");
 const repoName = document.querySelector(".repo-name");
+// Arrays to stock data.
 const repoArr = [];
 const repoUrl = [];
 const repoDesc = [];
@@ -21,33 +22,30 @@ function requestUserRepos(username) {
     // Parse API data into JSON
     const data = JSON.parse(this.response);
 
-    // Log the response
-    console.log(data);
-
     // Loop over each object in data array
     for (let i in data) {
-      // Log the repo name
-      console.log("Repo:", data[i].name);
-      repoArr.push(data[i].name);
-      console.log(repoArr);
-      repoUrl.push(data[i].svn_url);
-      console.log(repoUrl);
-      repoDesc.push(data[i].description);
       const newrepoDiv = document.createElement("div");
-      githubRepo.appendChild(newrepoDiv);
-      newrepoDiv.classList.add("newrepoDiv");
       const newRepo = document.createElement("a");
       const newDesc = document.createElement("a");
-      newrepoDiv.appendChild(newRepo);
-      newrepoDiv.appendChild(newDesc);
+      // Stock data into arrays
+      repoArr.push(data[i].name);
+      repoUrl.push(data[i].svn_url);
+      repoDesc.push(data[i].description);
+      // Create divs
+      githubRepo.appendChild(newrepoDiv);
+      newrepoDiv.classList.add("newrepoDiv");
+      // Create a card of each repo with URL/Title and the description
       newRepo.innerHTML = repoArr[i];
       newRepo.classList.add("newRepo");
       newRepo.target = "_blank";
       newRepo.href = repoUrl[i];
       newDesc.innerHTML = repoDesc[i];
       newDesc.classList.add("newDesc");
+      // Make it appends to the main div (card)
+      newrepoDiv.appendChild(newRepo);
+      newrepoDiv.appendChild(newDesc);
     }
-    // For each element, create a div and stock him in a "a" element
+    // For each element, create a div and stock it in a "a" element
   };
 
   // Send the request to the server
