@@ -38,7 +38,9 @@ function requestUserRepos(username) {
       newRepo.innerHTML = repoArr[i];
       newRepo.classList.add("newRepo");
       newRepo.target = "_blank";
+      //URL
       newRepo.href = repoUrl[i];
+      //Desc
       newDesc.innerHTML = repoDesc[i];
       newDesc.classList.add("newDesc");
       // Make it appends to the main div (card)
@@ -51,5 +53,5 @@ function requestUserRepos(username) {
   // Send the request to the server
   xhr.send();
 }
-// Choose the username you want
+// Get the wanted user with his username in Github.
 requestUserRepos("Jintarq");
