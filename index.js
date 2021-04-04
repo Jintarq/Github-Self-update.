@@ -32,10 +32,13 @@ function requestUserRepos(username) {
       repoUrl.push(data[i].svn_url);
       repoDesc.push(data[i].description);
       // Create divs
+      repoArr.map((e) => {
+        const arrayNamesRepos = [e.toString().replaceAll("-", " ")];
+        newRepo.innerHTML = arrayNamesRepos;
+      });
       githubRepo.appendChild(newrepoDiv);
       newrepoDiv.classList.add("newrepoDiv");
       // Create a card of each repo with URL/Title and the description
-      newRepo.innerHTML = repoArr[i];
       newRepo.classList.add("newRepo");
       newRepo.target = "_blank";
       //URL
@@ -47,7 +50,6 @@ function requestUserRepos(username) {
       newrepoDiv.appendChild(newRepo);
       newrepoDiv.appendChild(newDesc);
     }
-    // For each element, create a div and stock it in a "a" element
   };
 
   // Send the request to the server
